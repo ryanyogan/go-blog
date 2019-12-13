@@ -14,6 +14,7 @@ type IBoltClient interface {
 	OpenBoltDB()
 	QueryAccount(accountID string) (model.Account, error)
 	Seed()
+	Check() bool
 }
 
 // BoltClient is the BoltDB connection struct
@@ -91,4 +92,10 @@ func (bc *BoltClient) QueryAccount(accountID string) (model.Account, error) {
 	}
 
 	return account, nil
+}
+
+// Check -- to check shit, i dunno this is my code stop making me write
+// comments
+func (bc *BoltClient) Check() bool {
+	return bc.boltDB != nil
 }
