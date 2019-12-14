@@ -9,7 +9,7 @@ echo build `pwd`
 export GOOS=darwin
 
 docker build -t ryanyogan/accountservice .
+docker push ryanyogan/accountservice:latest
 
 docker service rm accountservice
-docker service ps
 docker service create --name=accountservice --replicas=1 --network=blog -p=6767:6767 ryanyogan/accountservice:latest
