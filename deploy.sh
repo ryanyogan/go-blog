@@ -11,4 +11,5 @@ export GOOS=darwin
 docker build -t ryanyogan/accountservice .
 
 docker service rm accountservice
-docker service create --name=accountservice --replicas=1 --network=blog -p=6767:6767 ryanyogan/accountservice
+docker service ps
+docker service create --name=accountservice --replicas=1 --network=blog -p=6767:6767 ryanyogan/accountservice:latest
